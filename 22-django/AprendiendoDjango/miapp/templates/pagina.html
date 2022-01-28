@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% load filters %}
+{% block title %}
+    Página de pruebas
+{% endblock %}
+
+{% block content %}
+<h1 class="title">Página de mi WEB</h1>
+<p>{{"Cñreado pñor Vícñtor Rñobles Web"|cut:"ñ"}}</p>
+{{texto|default:"no hay nada"}}
+<p>{{lista|first}}</p>
+<p>{{lista|join:'-'}}</p>
+<p>{{texto|length}}</p>
+<p>{{texto|upper}}</p>
+<p>{{texto|upper|lower}}</p>
+<p>{{lista|random}}</p>
+<p>
+    {{"<h1>Texto</h1><strong> Pruebas</strong><p> Hola</p> Mundo"|striptags|wordcount}}
+</p>
+{{"Víctor"|saludo|safe}}
+{% endblock %}

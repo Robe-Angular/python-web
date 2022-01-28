@@ -1,0 +1,15 @@
+{% extends 'layout/layout.html' %}
+{% block title %}
+    {{category.name}}
+{% endblock title %}
+    
+
+{% block content %}
+<h1 class="title">{{category.name}}</h1>
+<p> {{category.description}} </p>
+{% comment "Cambiado en el modelo Many to many" %}
+    {% include 'articles/articles.html' with articles=category.article_set.all %}
+{% endcomment %}
+{% include 'articles/articles.html' with articles=category.articles.all %}
+
+{% endblock content %}
